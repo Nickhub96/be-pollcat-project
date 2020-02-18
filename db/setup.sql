@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS pollcat_test;
+DROP DATABASE IF EXISTS pollcat;
+
+CREATE DATABASE pollcat_test;
+CREATE DATABASE pollcat;
