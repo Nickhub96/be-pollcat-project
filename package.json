@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup-dbs": "psql -f ./db/setup.sql",
+    "seed": "knex seed:run",
+    "migrate-make": "knex migrate:make",
+    "migrate-latest": "knex migrate:latest"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.20.10",
-    "mysql": "^2.18.1"
+    "mysql": "github:mysqljs/mysql",
+    "pg": "^7.18.1"
   }
 }

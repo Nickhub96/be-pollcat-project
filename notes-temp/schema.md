@@ -1,11 +1,12 @@
 # SCHEMA
 
-# RESPONSES
+# ANSWERS
 
-response id
-response
+answer id
+answer
 latitude
 longitude
+location
 time submitted
 question id
 user id
@@ -14,13 +15,11 @@ user id
 
 user id
 username
-First name
-Last name
-avatar url
+UID
 
-# QUESTION
+# QUESTIONS
 
 Question id
 Question
-Time Posted
-Deadline
+startTime
+status
