@@ -13,7 +13,6 @@ const connection = mysql.createConnection({
 // post request to create a user
 app.post("/users", (req, res) => {
   console.log(req.query);
-  console.log(req.params);
   if (req.query.username && req.query.email && req.query.age) {
     console.log("Request received");
 

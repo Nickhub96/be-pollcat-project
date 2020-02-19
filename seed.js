@@ -16,10 +16,11 @@ connection.connect(function(err) {
     "CREATE TABLE IF NOT EXISTS users(id int NOT NULL AUTO_INCREMENT, username varchar(30), email varchar(255), age int, PRIMARY KEY(id));",
     function(error, result, fields) {
       console.log(result);
+      console.log(fields);
     }
   );
 
   connection.end();
 });
 
-module.exports = connection;
+//module.exports = connection;
