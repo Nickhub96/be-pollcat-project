@@ -3,8 +3,8 @@ exports.up = function(knex) {
     users_table
       .increments("user_id")
       .primary()
-      .notNullable()
       .unique();
+
     users_table.string("username").notNullable();
     users_table.string("UID").notNullable();
   });
