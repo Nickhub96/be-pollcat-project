@@ -1,5 +1,7 @@
 const ENV = process.env.NODE_ENV || "test";
 
+console.log(ENV, "ENV ******");
+
 const baseConfig = {
   client: "pg",
   migrations: {
@@ -16,10 +18,12 @@ const customConfig = {
       host: "database-1.cw9az4fgwt3t.eu-west-2.rds.amazonaws.com",
       user: "postgres",
       password: "Team.Pollcat1",
-      database: "pollcatDB"
+      database: "pollcatDB",
+      rejectUnauthorized: false
     }
 
-    // "postgresql://database-1.cw9az4fgwt3t.eu-west-2.rds.amazonaws.com:5432/pollcatDB"
+    // connection:
+    //   "postgresql://database-1.cw9az4fgwt3t.eu-west-2.rds.amazonaws.com:5432/pollcatDB?ssl=true"
   },
   test: {
     connection: {

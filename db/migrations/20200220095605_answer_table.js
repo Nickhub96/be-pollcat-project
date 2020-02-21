@@ -1,4 +1,5 @@
 exports.up = function(knex) {
+  console.log("cerating answers table");
   return knex.schema.createTable("answers", answer_table => {
     answer_table
       .increments("answer_id")
@@ -31,5 +32,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
+  console.log("dropping answers table");
   return knex.schema.dropTable("answers");
 };
