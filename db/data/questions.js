@@ -2,7 +2,7 @@ module.exports = [
   {
     question: "Dominos or Pizza hut?",
     startTime: 1582110398,
-    status: "current",
+    questionStatus: "current",
     img: "question photo",
     answerArray: [
       {
@@ -18,7 +18,7 @@ module.exports = [
   {
     question: "Custard Creams or Bourbons?",
     startTime: 1582201825,
-    status: "future",
+    questionStatus: "future",
     img: "question photo",
     answerArray: [
       {
@@ -34,7 +34,7 @@ module.exports = [
   {
     question: "Manchester United or Manchester City?",
     startTime: 1582301825,
-    status: "future",
+    questionStatus: "future",
     img: "question photo",
     answerArray: [
       {

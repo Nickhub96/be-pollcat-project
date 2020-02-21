@@ -8,7 +8,7 @@ exports.up = function(knex) {
     question_table.string("question").notNullable();
     question_table.timestamp("startTime").notNullable();
     question_table.string("img").notNullable();
-    question_table.string("status").notNullable();
+    question_table.string("questionStatus").notNullable();
     question_table.specificType("answerArray", "text ARRAY");
   });
 };

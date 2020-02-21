@@ -25,7 +25,6 @@ exports.seed = function(knex) {
       return Promise.all([questionsInsertions, userInsertions]);
     })
     .then(([questionsInsertions, userInsertions]) => {
-      console.log(questionsInsertions);
       const formattedAnswerDates = formatAnswerDates(answersData);
       const questionRef = questionRefObj(questionsInsertions);
       const userRef = userRefObj(userInsertions);
