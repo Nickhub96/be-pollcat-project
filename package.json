@@ -8,11 +8,12 @@
     "setup-dbs": "psql -f ./db/setup.sql",
     "seed": "knex seed:run",
     "seed-test": "NODE_ENV='test' npm run seed",
-    "seed-prod": "NODE_ENV=production npm run seed",
-    "migrate-latest:prod": "NODE_ENV=production knex migrate:latest",
-    "migrate-rollback:prod": "NODE_ENV=production knex migrate:rollback",
+    "seed:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex seed:run",
+    "migrate-latest:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:latest",
+    "migrate-rollback:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:rollback",
     "migrate-make": "knex migrate:make",
-    "migrate-latest": "knex migrate:latest"
+    "migrate-latest": "knex migrate:latest",
+    "start": "node listen.js"
   },
   "repository": {
     "type": "git",
