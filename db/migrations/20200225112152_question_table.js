@@ -1,5 +1,4 @@
 exports.up = function(knex) {
-  console.log("cerating questions table");
   return knex.schema.createTable("questions", question_table => {
     question_table
       .increments("question_id")
@@ -15,6 +14,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  console.log("dropping questions table");
   return knex.schema.dropTable("questions");
 };

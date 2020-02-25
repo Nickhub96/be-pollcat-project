@@ -1,29 +1,25 @@
 exports.up = function(knex) {
-  console.log("cerating answers table");
   return knex.schema.createTable("answers", answer_table => {
     answer_table
       .increments("answer_id")
       .primary()
       .notNullable()
       .unique();
-    answer_table.string("answer").notNullable();
-    answer_table
-      .integer("user_id")
-      .references("users.user_id")
-      .notNullable();
+    answer_table.integer("answerIndex").notNullable();
+    answer_table.string("userUid").notNullable();
     answer_table
       .integer("question_id")
       .references("questions.question_id")
       .notNullable();
-    answer_table.decimal("longitude").notNullable();
+
     answer_table
-      .decimal("latitude")
+      .string("townName")
       .notNullable()
-      .defaultTo(null);
+      .defaultTo("Manchester City Centre");
     answer_table
-      .string("location")
+      .string("countyName")
       .notNullable()
-      .defaultTo(null);
+      .defaultTo("Greater Manchester");
     answer_table
       .timestamp("timePosted")
       .defaultTo(knex.fn.now())
@@ -32,6 +28,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  console.log("dropping answers table");
   return knex.schema.dropTable("answers");
 };

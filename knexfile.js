@@ -1,6 +1,6 @@
 const { DB_URL } = process.env;
 
-const ENV = process.env.NODE_ENV || "test";
+const ENV = process.env.NODE_ENV || "development";
 
 console.log(ENV, "ENV ******");
 
@@ -26,7 +26,7 @@ const customConfig = {
     // connection:
     //   "postgresql://database-1.cw9az4fgwt3t.eu-west-2.rds.amazonaws.com:5432/pollcatDB?ssl=true"
   },
-  test: {
+  development: {
     connection: {
       database: "pollcat"
     }

@@ -1,3 +1,5 @@
+process.env.NODE_ENV = "development";
+
 const chai = require("chai");
 const chaiSorted = require("chai-sorted");
 const { expect } = chai;
@@ -43,11 +45,11 @@ describe("app", () => {
       });
       it("GET:200 responds with an array of all the questions with a questionStatus query", () => {
         return request(app)
-          .get("/api/questions?questionStatus=future")
+          .get("/api/questions?questionStatus=past")
           .expect(200)
           .then(res => {
             const output = res.body.questions.every(question => {
-              return question.questionStatus === "future";
+              return question.questionStatus === "past";
             });
             expect(output).to.be.true;
           });

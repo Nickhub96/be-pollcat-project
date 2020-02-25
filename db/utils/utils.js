@@ -19,7 +19,6 @@ exports.formatQuestionDates = list => {
     copyObj.startTime = new Date(copyObj.startTime);
     return copyObj;
   });
-
   return formatDates;
 };
 
@@ -32,23 +31,25 @@ exports.questionRefObj = list => {
   return newObj;
 };
 
-exports.userRefObj = list => {
-  const newObj = {};
-  list.forEach(data => {
-    newObj[data.username] = data.user_id;
-  });
-  // console.log(newObj);
-  return newObj;
-};
+// exports.userRefObj = list => {
+//   const newObj = {};
+//   list.forEach(data => {
+//     newObj[data.username] = data.user_id;
+//   });
+//   // console.log(newObj);
+//   return newObj;
+// };
 
-exports.answerFormatter = (list, questionRef, userRef) => {
+exports.answerFormatter = (list, questionRef) => {
+  // question -> question_id
+
   const newAnswer = [];
   list.forEach(data => {
     const duplicate = { ...data };
     duplicate.question_id = questionRef[duplicate.question];
     delete duplicate.question;
-    duplicate.user_id = userRef[duplicate.username];
-    delete duplicate.username;
+    // duplicate.user_id = userRef[duplicate.username];
+    // delete duplicate.username;
     newAnswer.push(duplicate);
   });
   return newAnswer;
