@@ -1,4 +1,4 @@
-const { usersData, answersData, questionsData } = require("../data/index");
+const { usersData, answersData, questionsData } = require("../data-index");
 
 const {
   formatAnswerDates,
